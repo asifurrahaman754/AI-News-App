@@ -10,7 +10,7 @@ function App() {
           "1a0753cdf273edcb1a296acc6896c8ab2e956eca572e1d8b807a3e2338fdd0dc/stage",
         onCommand: (commandData, articles) => {
           if (commandData.command === "newHeadlines") {
-            console.log(Json.stringify(articles));
+            console.log(JSON.stringify(articles));
           }
         },
       });
