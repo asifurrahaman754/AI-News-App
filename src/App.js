@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
+import NewsCards from "./components/News Cards/NewsCards";
 
 function App() {
   const alanBtnInstance = useRef(null);
-  let p = useRef(null);
+  const [news, setNews] = useState([]);
 
   useEffect(() => {
     if (!alanBtnInstance.current) {
@@ -12,7 +13,7 @@ function App() {
           "1a0753cdf273edcb1a296acc6896c8ab2e956eca572e1d8b807a3e2338fdd0dc/stage",
         onCommand: (commandData, articles) => {
           if (commandData.command === "newHeadlines") {
-            p.current.textContent = JSON.stringify(articles);
+            setNews(articles);
           }
         },
       });
@@ -22,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <h1>testing voice command 2</h1>
-      <p ref={p}></p>
+      <NewsCards articles={news} />
     </div>
   );
 }
