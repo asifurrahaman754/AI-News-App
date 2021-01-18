@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>testing voice command 2</h1>
+      <h1>testing voice command 3</h1>
       <NewsCards articles={news} />
     </div>
   );
