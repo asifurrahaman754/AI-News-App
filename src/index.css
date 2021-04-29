@@ -22,3 +22,13 @@ code {
 html {
   scroll-behavior: smooth;
 }
+
+.logo {
+  max-width: 300px;
+  display: block;
+  margin: 30px auto 20px auto;
+}
+
+.logo img {
+  width: 100%;
+}

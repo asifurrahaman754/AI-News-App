@@ -20,7 +20,7 @@ export default function Initial({ infoCard: { color, title, text, info } }) {
         </InitInfoContainer>
       )}
       <InitCardTextContainer>
-        <InitInfoHead>Try saying:</InitInfoHead>
+        <InitInfoHead>example:</InitInfoHead>
         <InitInfoText>"{text}"</InitInfoText>
       </InitCardTextContainer>
     </InitContainer>

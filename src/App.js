@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import NewsCards from "./components/News Cards";
+import svg from "../src/asset/logo.svg";
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -20,7 +21,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>testing voice command 3</h1>
+      <div className="logo">
+        <img src={svg} />
+      </div>
       <NewsCards articles={articles} />
     </div>
   );

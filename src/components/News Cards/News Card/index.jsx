@@ -2,6 +2,7 @@ import React from "react";
 import {
   Card,
   CardImage,
+  Image,
   CardContentContainer,
   CardTopSection,
   DateStr,
@@ -22,12 +23,13 @@ export default function NewsCard({ article, i }) {
     title,
     urlToImage,
     url,
+    source,
   } = article;
 
-  const formatDes = des => {
+  const formattext = (des, num) => {
     const strArr = des.split(" ");
-    if (strArr.length >= 25) {
-      strArr.length = 25;
+    if (strArr.length >= num) {
+      strArr.length = num;
       let formatedDes = strArr.join(" ");
       return formatedDes + "...";
     }
@@ -38,14 +40,20 @@ export default function NewsCard({ article, i }) {
   return (
     //prettier-ignore
     <Card key={i}>
-      <CardImage src={urlToImage} />
+      <CardImage>
+        <Image src={urlToImage} />
+      </CardImage>
+
       <CardContentContainer>
         <CardTopSection>
           <DateStr>{new Date(publishedAt).toLocaleDateString()}</DateStr>
-          <Author>BBC</Author>
+          <Author>{source.name}</Author>
         </CardTopSection>
-        <CardHeader>{title}</CardHeader>
-        <CardDes>{formatDes(description)}</CardDes>
+
+        <CardHeader>{title && formattext(title, 8)}</CardHeader>
+
+        <CardDes>{description && formattext(description, 18)}</CardDes>
+
         <CardBottomSection>
           <LearnMore href={url} target="_blank" >Learn more</LearnMore>
           <CardNumber>{i + 1}</CardNumber>

@@ -5,8 +5,17 @@ const Card = styled.article`
   background: white;
 `;
 
-const CardImage = styled.img`
+const CardImage = styled.div`
+  width: 100%;
+  height: 200px;
+`;
+
+const Image = styled.img`
   max-width: 100%;
+  height: inherit;
+  object-fit: cover;
+  object-position: bottom;
+  width: 100%;
 `;
 
 const CardContentContainer = styled.div`
@@ -49,6 +58,7 @@ const CardNumber = styled.span``;
 export {
   Card,
   CardImage,
+  Image,
   CardContentContainer,
   CardTopSection,
   DateStr,
