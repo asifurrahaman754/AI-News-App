@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Card = styled.article`
   box-shadow: 2px 4px 5px #c8c8c8;
   background: white;
+  border-bottom: ${({ ifActive }) => (ifActive ? "8px solid blue" : "none")};
 `;
 
 const CardImage = styled.div`

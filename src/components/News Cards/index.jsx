@@ -8,7 +8,7 @@ const infoCards = [
   { color: '#00838f', title: 'Latest News', text: 'Give me the latest news' },
   { color: '#1565c0', title: 'News by Categories', info: 'Business, Entertainment, General, Health, Science, Sports, Technology', text: 'Give me the latest Technology news' },
   { color: '#4527a0', title: 'News by Terms', info: 'Bitcoin, PlayStation 5, Smartphones, Donald Trump...', text: 'Give me news about bitcoin' },
-  { color: '#283593', title: 'News by Sources', info: 'CNN, Wired, BBC News, Time, IGN, Buzzfeed, ABC News...', text: 'Give me the news from BBC' },
+  { color: '#283593', title: 'News by Sources', info: 'CNN, Wired, BBC News, Time, IGN, Buzzfeed, ABC News...', text: 'Give me the news from CNN' },
 ];
 
 const CartContainer = styled.div`
@@ -27,7 +27,7 @@ const InfoCardContainer = styled(CartContainer)`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 `;
 
-export default function NewsCards({ articles }) {
+export default function NewsCards({ articles, activeArticle }) {
   if (!articles.length) {
     return (
       <InfoCardContainer>
@@ -41,7 +41,7 @@ export default function NewsCards({ articles }) {
   return (
     <CartContainer>
       {articles.map((article, index) => (
-        <NewsCard i={index} article={article} />
+        <NewsCard i={index} article={article} activeArticle={activeArticle} />
       ))}
     </CartContainer>
   );

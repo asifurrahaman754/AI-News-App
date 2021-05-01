@@ -32,3 +32,11 @@ html {
 .logo img {
   width: 100%;
 }
+
+.back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  cursor: pointer;
+}

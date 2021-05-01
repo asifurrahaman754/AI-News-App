@@ -14,7 +14,7 @@ import {
   CardNumber,
 } from "./NewsCardCom";
 
-export default function NewsCard({ article, i }) {
+export default function NewsCard({ article, i, activeArticle }) {
   const {
     author,
     content,
@@ -26,6 +26,7 @@ export default function NewsCard({ article, i }) {
     source,
   } = article;
 
+  //formted the text so that it doesn't go too long
   const formattext = (des, num) => {
     const strArr = des.split(" ");
     if (strArr.length >= num) {
@@ -33,13 +34,12 @@ export default function NewsCard({ article, i }) {
       let formatedDes = strArr.join(" ");
       return formatedDes + "...";
     }
-
     return des;
   };
 
   return (
     //prettier-ignore
-    <Card key={i}>
+    <Card key={i} ifActive= {activeArticle === i ? true : false} >
       <CardImage>
         <Image src={urlToImage} />
       </CardImage>
