@@ -15,6 +15,7 @@ import {
 } from "./NewsCardCom";
 
 export default function NewsCard({ article, i, activeArticle }) {
+  //destructure all items getting from the api article
   const {
     author,
     content,

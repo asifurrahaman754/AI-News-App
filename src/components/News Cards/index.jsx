@@ -6,9 +6,9 @@ import Initial from "../Initial";
 //prettier-ignore
 const infoCards = [
   { color: '#00838f', title: 'Latest News', text: 'Give me the latest news' },
-  { color: '#1565c0', title: 'News by Categories', info: 'Business, Entertainment, General, Health, Science, Sports, Technology', text: 'Give me the latest Technology news' },
+  { color: '#1565c0', title: 'News by Categories', info: 'Business, Entertainment, General, Health, Science, Sports, Technology', text: 'Give me the latest news about Technology' },
   { color: '#4527a0', title: 'News by Terms', info: 'Bitcoin, PlayStation 5, Smartphones, Donald Trump...', text: 'Give me news about bitcoin' },
-  { color: '#283593', title: 'News by Sources', info: 'CNN, Wired, BBC News, Time, IGN, Buzzfeed, ABC News...', text: 'Give me the news from CNN' },
+  { color: '#283593', title: 'News by Sources', info: 'CNN, BBC News, Time, IGN, Buzzfeed, ABC News...', text: 'Give me the news from CNN' },
 ];
 
 const CartContainer = styled.div`
@@ -28,6 +28,7 @@ const InfoCardContainer = styled(CartContainer)`
 `;
 
 export default function NewsCards({ articles, activeArticle }) {
+  //show the user about the all comands in the initial page load
   if (!articles.length) {
     return (
       <InfoCardContainer>

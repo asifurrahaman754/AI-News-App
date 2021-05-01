@@ -40,3 +40,25 @@ html {
   z-index: 999;
   cursor: pointer;
 }
+
+.article-instruction-container {
+  display: grid;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.article-instruction-container > * {
+  padding: 20px 0px;
+  background: #1db0ff;
+  color: white;
+}
+
+.article-instruction-container > *:first-child {
+  border-right: 1px solid #e3e3e3;
+}
